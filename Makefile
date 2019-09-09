@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/09 18:54:38 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/09 19:24:20 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,12 @@ FLAGS = -Wall -Wextra -Werror
 
 INCLUDES = /
 
-SRC =
+SRC = ft_memset.c \
+	  ft_bzero.c \
+	  ft_memcpy.c \
 
-OBJ =
+
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
