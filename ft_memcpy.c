@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 19:24:12 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/09 20:03:33 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/10 15:55:00 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/10 17:57:59 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char *dest;
-	const char *s;
-
-	dest = dst;
-	s = src;
-	while (n--)
+	if (dst != src)
 	{
-		*dest = *s;
-		++dest;
-		++s;
+		dst += n;
+		src += n;
+		while (n-- > 0)
+			*(unsigned char *)--dst = *(unsigned char *)--src;
 	}
 	return (dst);
 }

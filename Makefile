@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/09 19:24:20 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/10 18:19:44 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,14 @@ INCLUDES = /
 SRC = ft_memset.c \
 	  ft_bzero.c \
 	  ft_memcpy.c \
+	  ft_memccpy.c \
+	  ft_memmove.c \
+	  ft_memchr.c \
+	  ft_memcmp.c \
+	  ft_strlen.c \
+	  ft_strdup.c \
+	  ft_strcpy.c \
+
 
 
 OBJ = $(SRC:.c=.o)
@@ -34,7 +42,7 @@ clean:
 		rm -rf $(OBJ)
 
 fclean: clean
-		rm_rf $(NAME)
+		rm -rf $(NAME)
 
 re: fclean all
 

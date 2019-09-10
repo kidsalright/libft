@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 16:31:48 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/10 16:16:29 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/10 17:46:34 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/10 18:45:14 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	char *tmp;
+
+	tmp = dst;
+	while (*src)
+	{
+		*dst = *src;
+		++dst;
+		++src;
+	}
+	*dst = '\0';
+	return (tmp);
 }
