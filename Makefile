@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/11 17:17:04 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/11 18:17:12 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,10 @@ SRC = ft_memset.c \
 	  ft_strncpy.c \
 	  \
 	  \
+	  \
+	  \
+	  ft_strcmp.c \
+	  ft_strncmp.c \
 	  ft_atoi.c \
 	  ft_isalpha.c \
 	  ft_isdigit.c \
@@ -50,6 +54,9 @@ SRC = ft_memset.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
+	  \
+	  \
+	  \
 
 
 
