@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 16:20:27 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/11 19:04:49 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/11 18:38:52 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/11 19:43:39 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int div;
-
-	div = n / 10;
-	if (n < 0)
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (*haystack)
 	{
-		ft_putchar_fd('-', fd);
-		if (div)
-			ft_putnbr_fd(-div, fd);
-		ft_putchar_fd((-(n % 10) + '0'), fd);
+		
 	}
-	else
-	{
-		if (div)
-			ft_putnbr_fd(div, fd);
-		ft_putchar_fd(((n % 10) + '0'), fd);
-	}
+	return (NULL);
 }

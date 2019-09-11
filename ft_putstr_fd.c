@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 16:31:48 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/11 17:03:09 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/11 19:03:02 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
