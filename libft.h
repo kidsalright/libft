@@ -6,13 +6,14 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 15:16:15 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/10 17:04:55 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/11 17:00:08 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <unistd.h>
 
 typedef	struct		s_list
 {

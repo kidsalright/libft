@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 16:30:50 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/08 16:31:40 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/11 17:07:30 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putstr(char const *s)
 {
-	ft_putstr(*s, fd);
+	ft_putstr_fd(s, 1);
 }

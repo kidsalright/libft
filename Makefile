@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/11 13:57:04 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/11 17:17:04 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,17 @@ SRC = ft_memset.c \
 	  \
 	  \
 	  \
+	  \
+	  \
+	  ft_putchar.c \
+	  ft_putstr.c \
+	  ft_putendl.c \
+	  ft_putnbr.c \
+	  ft_putchar_fd.c \
+	  ft_putstr_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
+
 
 
 

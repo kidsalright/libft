@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 15:56:13 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/11 14:33:49 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/11 16:46:12 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,19 @@ int		ft_atoi(const char *str)
 	int		i;
 	long	number;
 	char	negative;
-	char	*s;
 
-	s = ft_strdup(str);
 	i = 0;
 	number = 0;
 	negative = 0;
-	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	if (s[i] == '-')
+	if (str[i] == '-')
 		negative = -1;
-	if (s[i] == '+' || s[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (ft_isdigit(s[i]))
+	while (ft_isdigit(str[i]))
 	{
-		number = 10 * number + (s[i] - '0');
+		number = 10 * number + (str[i] - '0');
 		i++;
 	}
 	if (negative == -1)
