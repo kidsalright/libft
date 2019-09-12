@@ -6,32 +6,32 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 21:51:28 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/12 23:26:49 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/13 00:10:23 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t pos;
 	size_t res;
 	size_t i;
 
-	if (*needle == '\0')
-		return ((char *)haystack);
+	if (*s2 == '\0')
+		return ((char *)s1);
 	pos = 0;
-	while (*(haystack + pos) && len-- > 0 && pos < len)
+	while (*(s1 + pos) && len > pos)
 	{
 		res = pos;
 		i = 0;
-		while (*(needle + i) == *(haystack + res) && *(needle + i))
+		while (*(s2 + i) == *(s1 + res) && *(s2 + i) && pos + i < len)
 		{
 			++res;
 			++i;
 		}
-		if (*(needle + i) == '\0')
-			return ((char *)(haystack + pos));
+		if (*(s2 + i) == '\0')
+			return ((char *)(s1 + pos));
 		++pos;
 	}
 	return (NULL);
