@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/12 16:53:55 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/12 19:14:43 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC = ft_memset.c \
 	  ft_strncpy.c \
 	  ft_strcat.c \
 	  ft_strncat.c \
-	  \
+	  ft_strlcat.c \
 	  ft_strchr.c \
 	  ft_strrchr.c \
 	  \
