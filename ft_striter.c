@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 19:46:40 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/11 19:59:43 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/12 15:02:32 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/12 15:10:02 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	if (s && f)
+		while (*s)
+		{
+			f(s);
+			++s;
+		}
 }

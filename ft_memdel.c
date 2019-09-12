@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 19:46:40 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/11 19:59:43 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/11 20:14:49 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/12 14:42:27 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+void	ft_memdel(void **ap)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	if (ap)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

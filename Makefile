@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/11 19:43:52 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/12 16:53:55 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,12 @@ SRC = ft_memset.c \
 	  ft_strdup.c \
 	  ft_strcpy.c \
 	  ft_strncpy.c \
-	  \
-	  \
+	  ft_strcat.c \
+	  ft_strncat.c \
 	  \
 	  ft_strchr.c \
 	  ft_strrchr.c \
+	  \
 	  \
 	  ft_strcmp.c \
 	  ft_strncmp.c \
@@ -44,7 +45,14 @@ SRC = ft_memset.c \
 	  ft_toupper.c \
 	  ft_tolower.c \
 	  \
-	  \
+	  ft_memalloc.c \
+	  ft_memdel.c \
+	  ft_strnew.c \
+	  ft_strdel.c \
+	  ft_strclr.c \
+	  ft_striter.c \
+	  ft_striteri.c \
+	  ft_strmap.c \
 	  \
 	  \
 	  \

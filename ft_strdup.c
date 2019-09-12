@@ -6,11 +6,10 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 05:01:28 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/10 17:43:19 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/11 20:00:31 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)

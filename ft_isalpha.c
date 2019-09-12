@@ -6,11 +6,11 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 19:37:47 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/10 19:44:13 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/11 19:59:38 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
+#include "libft.h"
 
 int		ft_isalpha(int c)
 {
