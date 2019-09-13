@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/12 23:02:36 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/13 22:33:10 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,6 @@ SRC = ft_memset.c \
 	  ft_isprint.c \
 	  ft_toupper.c \
 	  ft_tolower.c \
-	  \
 	  ft_memalloc.c \
 	  ft_memdel.c \
 	  ft_strnew.c \
@@ -53,6 +52,12 @@ SRC = ft_memset.c \
 	  ft_striter.c \
 	  ft_striteri.c \
 	  ft_strmap.c \
+	  ft_strmapi.c \
+	  ft_strequ.c \
+	  ft_strnequ.c \
+	  ft_strsub.c \
+	  ft_strjoin.c \
+	  ft_strtrim.c \
 	  \
 	  \
 	  \
@@ -67,11 +72,8 @@ SRC = ft_memset.c \
 	  \
 	  \
 	  \
-
-
-
-
-
+	  \
+	  \
 
 
 OBJ = $(SRC:.c=.o)

@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 21:51:28 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/13 22:50:10 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/13 20:43:46 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/13 20:55:48 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t pos;
-	size_t res;
-	size_t i;
+	char	*temp;
+	int		i;
 
-	if (*needle == '\0')
-		return ((char *)haystack);
-	pos = 0;
-	while (*(haystack + pos) && len > pos)
+	i = 0;
+	if (s && f)
 	{
-		res = pos;
-		i = 0;
-		while (*(needle + i) == *(haystack + res) && *(needle + i) \
-													&& pos + i < len)
+		if (!(temp = ft_strnew(ft_strlen(s))))
+			return (NULL);
+		ft_strcpy(temp, s);
+		if (temp)
 		{
-			++res;
-			++i;
+			while (temp[i])
+			{
+				temp[i] = (*f)(i, temp[i]);
+				++i;
+			}
+			return (temp);
 		}
-		if (*(needle + i) == '\0')
-			return ((char *)(haystack + pos));
-		++pos;
+		else
+			return (NULL);
 	}
-	return (NULL);
+	else
+		return (NULL);
 }
