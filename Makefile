@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/13 22:33:10 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/16 00:12:58 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,7 @@ SRC = ft_memset.c \
 	  ft_strjoin.c \
 	  ft_strtrim.c \
 	  \
-	  \
-	  \
+	  ft_itoa.c \
 	  ft_putchar.c \
 	  ft_putstr.c \
 	  ft_putendl.c \
@@ -69,10 +68,11 @@ SRC = ft_memset.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
+	  ft_lstnew.c \
 	  \
 	  \
-	  \
-	  \
+	  ft_lstadd.c \
+	  ft_lstiter.c \
 	  \
 
 
