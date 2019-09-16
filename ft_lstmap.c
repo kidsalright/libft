@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 19:14:07 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/16 15:56:35 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/16 19:06:54 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/16 20:17:29 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+static void		ft_lstfree(void *content, size_t content_size)
 {
-	unsigned char *tmp;
+	(void)content_size;
+	if (!content)
+		return ;
+	ft_memdel(content);
+}
 
-	tmp = b;
-	while (len)
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*tmp;
+
+	if (!lst || !f)
+		return (NULL);
+	tmp = (*f)(lst);
+	if (tmp)
 	{
-		*tmp = c;
-		++tmp;
-		--len;
+		tmp->next = ft_lstmap(lst->next, f);
+		if (!tmp->next && lst->next)
+		{
+			ft_lstdelone(&tmp, &ft_lstfree);
+			return (NULL);
+		}
 	}
-	return (b);
+	return (tmp);
 }

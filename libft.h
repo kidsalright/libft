@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 15:16:15 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/12 19:14:51 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/16 15:58:59 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				*ft_memset(void *str, int val, size_t len);
+void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -40,7 +40,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *str, const char *need, size_t len);
+char				*ft_strnstr(const char *haystack, \
+											const char *needle, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
