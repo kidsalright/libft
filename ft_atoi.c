@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 15:56:13 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/19 11:47:46 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/19 11:53:34 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_atoi(const char *str)
 		n = n * 10 + (*str++ - '0');
 		if (n >= LONG_MAX && sign == 0)
 			return ((int)LONG_MAX);
-		if ( n <= LONG_MIN)
+		if (n <= LONG_MIN)
 			return ((int)LONG_MIN);
 	}
 	if (sign)
