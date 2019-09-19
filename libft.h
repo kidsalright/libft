@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 15:16:15 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/19 17:38:37 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/19 20:04:27 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-
-# define HEIGHT(x) ((x) ? (x->height) : (0))
-
-typedef struct			s_avl_node
-{
-	void				*content;
-	struct s_avl_node	*left;
-	struct s_avl_node	*right;
-	unsigned char		height;
-}						t_avl_node;
-
-typedef struct			s_avl_tree
-{
-	struct s_avl_node	*root;
-	size_t				n;
-	int					(*cmp)(t_avl_node *a, t_avl_node *b);
-}						t_avl_tree;
 
 typedef	struct			s_list
 {
@@ -109,9 +92,7 @@ void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int						ft_isspace(char c);
 int						ft_root(int root, int nbr);
-t_avl_tree				*avl_create_tree(int (*cmp)(t_avl_node *a, \
-													t_avl_node *b));
-void					avl_insert(t_avl_tree *tree, t_avl_node *node);
-t_avl_node				*avl_balance(t_avl_node *node);
+
+
 
 #endif
