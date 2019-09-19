@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   avl_insert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 15:56:13 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/19 18:02:05 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/19 13:55:13 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/19 14:02:13 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static t_avl_node	*avl_ins(t_avl_node *tmp, t_avl_node *node, \
+						int (*cmp)(t_avl_node *a, t_avl_node *b))
 {
-	char	sign;
-	long	n;
-	long	buf;
+	if (!tmp)
+		return (node);
+	if ((*cmp)(node, tmp) < 0)
+		tmp->left = avl_ins(tmp->left, node, cmp);
+	else
+		tmp->right = avl_ins(tmp->right, node, cmp);
+	return (avl_balance(tmp));
+}
 
-	n = 0;
-	sign = 0;
-	buf = 0;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		++str;
-	if (*str == '-' || *str == '+')
-		sign = *str++ == '-';
-	while (*str >= '0' && *str <= '9')
-	{
-		buf = n;
-		n = n * 10 + (*str++ - '0');
-		if (buf > 0 && buf > n)
-			return (sign ? 0 : -1);
-	}
-	return (sign ? (int)-n : (int)n);
+void				avl_insert(t_avl_tree *tree, t_avl_node *node)
+{
+	tree->root = avl_ins(tree->root, node, tree->cmp);
+	++tree->n;
 }
