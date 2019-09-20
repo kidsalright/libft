@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 18:45:51 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/20 14:42:54 by yberries         ###   ########.fr       */
+/*   Created: 2019/09/19 22:13:02 by yberries          #+#    #+#             */
+/*   Updated: 2019/09/20 16:04:44 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_realloc(void *ptr, size_t size)
 {
-	size_t slen;
-	size_t dlen;
-	size_t i;
+	char	*res;
 
-	slen = ft_strlen(src);
-	dlen = ft_strlen(dst);
-	if (dlen >= size)
-		return (size + slen);
-	i = 0;
-	while (dlen + i < size - 1 && i < slen)
+	if (ptr && !size)
 	{
-		dst[dlen + i] = src[i];
-		++i;
+		if (!(res = (char *)malloc(1)))
+			return (NULL);
+		ft_memdel(ptr);
+		return (res);
 	}
-	dst[dlen + i] = '\0';
-	return (dlen + slen);
+	if (!(res = (char *)malloc(size)))
+		return (NULL);
+	if (ptr)
+	{
+		ft_memcpy(res, ptr, size);
+		ft_memdel(ptr);
+	}
+	return (res);
 }

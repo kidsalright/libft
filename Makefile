@@ -6,7 +6,7 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/19 20:04:06 by yberries         ###   ########.fr        #
+#    Updated: 2019/09/20 14:21:05 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,8 +76,9 @@ SRC = ft_memset.c \
 	  ft_lstmap.c \
 	  ft_isspace.c \
 	  ft_root.c \
-	  \
-	  \
+	  ft_realloc.c \
+	  btree_create_node.c \
+	  btree_insert_data.c 
 
 OBJ = $(SRC:.c=.o)
 

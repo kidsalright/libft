@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 15:16:15 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/19 20:04:27 by yberries         ###   ########.fr       */
+/*   Updated: 2019/09/20 14:20:39 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct			s_btree
+{
+	struct s_btree		*left;
+	struct s_btree		*right;
+	void				*item;
+}						t_btree;
 
 typedef	struct			s_list
 {
@@ -92,7 +99,9 @@ void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int						ft_isspace(char c);
 int						ft_root(int root, int nbr);
-
-
+void					*ft_realloc(void *ptr, size_t size);
+t_btree					*btree_create_node(void *item);
+void					btree_insert_data(t_btree **root, void *item, \
+												int (*cmpf)(void *, void*));
 
 #endif
