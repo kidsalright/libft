@@ -6,7 +6,7 @@
 /*   By: fhelena <fhelena@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/27 20:28:51 by fhelena           #+#    #+#             */
-/*   Updated: 2020/07/31 16:18:46 by fhelena          ###   ########.fr       */
+/*   Updated: 2020/09/21 19:35:21 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,5 @@ void		int_parse(t_flags *data, va_list ap)
 		d = (int)d;
 	str = ptf_itoa_base(d, 10, "0123456789", 1);
 	width_parse(data, str, 'd');
+	free(str);
 }
