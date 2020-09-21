@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_root.c                                          :+:      :+:    :+:   */
+/*   ft_countwords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 09:15:54 by yberries          #+#    #+#             */
-/*   Updated: 2020/01/22 16:57:34 by yberries         ###   ########.fr       */
+/*   Created: 2020/01/28 06:06:22 by yberries          #+#    #+#             */
+/*   Updated: 2020/01/28 06:07:11 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_power(int nbr, int power)
+int		ft_countwords(char *str, char c)
 {
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (0);
-	return (nbr * ft_power(nbr, power - 1));
-}
+	int	i;
+	int	count;
 
-int				ft_root(int root, int nbr)
-{
-	int res;
-
-	res = 0;
-	while (ft_power(res, root) <= nbr)
-		++res;
-	return (res - 1);
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] && str[i] == c)
+			++i;
+		if (str[i])
+			++count;
+		while (str[i] && str[i] != c)
+			++i;
+	}
+	return (count);
 }

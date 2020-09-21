@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 15:56:13 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/19 20:05:04 by yberries         ###   ########.fr       */
+/*   Updated: 2020/08/03 05:51:40 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	char	sign;
-	long	n;
-	long	buf;
+	char		sign;
+	long int	n;
+	long int	buf;
 
 	n = 0;
 	sign = 0;

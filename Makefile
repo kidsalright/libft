@@ -6,16 +6,14 @@
 #    By: yberries <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 17:04:49 by yberries          #+#    #+#              #
-#    Updated: 2019/09/20 14:21:05 by yberries         ###   ########.fr        #
+#    Updated: 2020/09/21 18:56:33 by yberries         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
-
 INCLUDES = /
-
 SRC = ft_memset.c \
 	  ft_bzero.c \
 	  ft_memcpy.c \
@@ -59,6 +57,7 @@ SRC = ft_memset.c \
 	  ft_strjoin.c \
 	  ft_strtrim.c \
 	  ft_strsplit.c \
+	  ft_countwords.c \
 	  ft_itoa.c \
 	  ft_putchar.c \
 	  ft_putstr.c \
@@ -72,28 +71,48 @@ SRC = ft_memset.c \
 	  ft_lstdelone.c \
 	  ft_lstdel.c \
 	  ft_lstadd.c \
+	  ft_lstcount.c \
+	  ft_lstrev.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c \
 	  ft_isspace.c \
 	  ft_root.c \
 	  ft_realloc.c \
 	  btree_create_node.c \
-	  btree_insert_data.c 
+	  btree_insert_data.c \
+	  get_next_line.c \
+	  ft_nbrlen.c
 
 OBJ = $(SRC:.c=.o)
+PFT = ft_printf/
+PFT_OBJ = $(PFT)/obj/*
+
+C_BLUE = \033[34m
+C_GRN = \033[33m
+C_RED = \033[31m
+C_RES = \033[00m
+
 
 all: $(NAME)
 
-$(NAME):
-		gcc $(FLAGS) -c $(SRC) -I $(INCLUDES)
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+%.o: %.c
+	@printf "\r$(C_BLUE)Compiling libft\n"
+	@gcc $(FLAGS) -c -o $@ $<
+
+$(NAME): $(OBJ)
+	@make -sC $(PFT)
+	@printf "\r$(C_GRN)Building lib$(C_RES)\n"
+	@ar rc $(NAME) $(OBJ) $(PFT_OBJ)
+	@ranlib $(NAME)
 
 clean:
-		rm -rf $(OBJ)
+	@make -sC $(PFT) clean
+	@printf "\r$(C_RED)Clean libft\n"
+	@rm -rf $(OBJ)
 
 fclean: clean
-		rm -rf $(NAME)
+	@printf "\r$(C_RED)Fclean libft\n"
+	@rm -rf $(NAME)
 
 re: fclean all
 

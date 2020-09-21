@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_root.c                                          :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 09:15:54 by yberries          #+#    #+#             */
-/*   Updated: 2020/01/22 16:57:34 by yberries         ###   ########.fr       */
+/*   Created: 2020/09/21 16:44:42 by yberries          #+#    #+#             */
+/*   Updated: 2020/09/21 16:44:48 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_power(int nbr, int power)
+int		ft_nbrlen(int n)
 {
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (0);
-	return (nbr * ft_power(nbr, power - 1));
-}
+		int len;
 
-int				ft_root(int root, int nbr)
-{
-	int res;
-
-	res = 0;
-	while (ft_power(res, root) <= nbr)
-		++res;
-	return (res - 1);
+		len = 1;
+		if (n < 0)
+		{
+				++len;
+				n = -n;
+		}
+		while (n /= 10)
+				++len;
+		return (len);
 }

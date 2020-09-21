@@ -6,7 +6,7 @@
 /*   By: yberries <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 15:16:15 by yberries          #+#    #+#             */
-/*   Updated: 2019/09/20 14:20:39 by yberries         ###   ########.fr       */
+/*   Updated: 2020/09/21 17:54:36 by yberries         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
+
+# define BUFF_SIZE 8
+
+typedef struct			s_file
+{
+	int					fd;
+	char				*rest;
+	struct s_file		*next;
+}						t_file;
 
 typedef struct			s_btree
 {
@@ -81,6 +91,7 @@ char					*ft_strsub(char const *s, unsigned int start, \
 char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_strtrim(char const *s);
 char					**ft_strsplit(char const *s, char c);
+int						ft_countwords(char *str, char c);
 char					*ft_itoa(int n);
 void					ft_putchar(char c);
 void					ft_putstr(char const *s);
@@ -97,11 +108,15 @@ void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list					*ft_lstnew(void const *content, size_t content_size);
 int						ft_isspace(char c);
 int						ft_root(int root, int nbr);
 void					*ft_realloc(void *ptr, size_t size);
 t_btree					*btree_create_node(void *item);
 void					btree_insert_data(t_btree **root, void *item, \
 												int (*cmpf)(void *, void*));
+int						get_next_line(const int fd, char **line);
+int						ft_nbrlen(int n);
+int                     ft_printf(const char *format, ...);
 
 #endif
